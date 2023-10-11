@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn {
+    @apply bg-red-400 text-xl p-1 rounded-md border border-black my-5
+  }
+  .island {
+    @apply bg-white w-10/12 min-h-3/4 m-auto p-5 rounded-xl border border-black
+  }
+  .smallIsland {
+    @apply bg-white border border-black rounded-xl h-20 w-10/12 m-auto p-5
+  }
+  .input {
+    @apply w-full rounded-xl border border-black p-2 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6
+  }
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,10 +32,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(252, 165, 165);
 }
