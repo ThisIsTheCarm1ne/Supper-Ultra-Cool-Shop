@@ -1,11 +1,11 @@
 export async function storefront(query: string, variables = {}) {
   try {
-    const response = await fetch(process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN,
+    const response = await fetch(process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN!,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-Shopify-Storefront-Access-Token": process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN
+          "X-Shopify-Storefront-Access-Token": process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN!
         },
         body: JSON.stringify({query, variables}),
       })
@@ -22,7 +22,7 @@ export async function storefront(query: string, variables = {}) {
     }
 
     return responseData;
-  } catch (error) {
+  } catch (error: unknown) {
     return error.message;
     //throw new Error(`Error in storefront function: ${error.message}`);
   }

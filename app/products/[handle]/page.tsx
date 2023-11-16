@@ -6,7 +6,7 @@ import Footer from "@/components/Footer"
 interface pageProps {
   params: {handle: string}
 }
-export default async function Product({ params }) {
+export default async function Product({ params }: pageProps) {
   const { data: { productByHandle } } = await storefront(singleProductQuery, { handle: params.handle } )
   return (
     <div>

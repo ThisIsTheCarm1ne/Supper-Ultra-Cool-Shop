@@ -3,9 +3,6 @@ import { formatPrice, storefront } from '../lib/shopify'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
 
-/* UNUSED TSX
-*/
-
 export default async function Home() {
   const { data: { products } } = await storefront(productsQuery)
   return (
@@ -15,7 +12,7 @@ export default async function Home() {
       <h2 className="sr-only">Products</h2>
       <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {products ? (
-          products.edges.map((item) => {
+          products.edges.map((item: any) => {
             const product = item.node
             const image = product.images.edges[0].node
             const price = formatPrice(product.priceRange.minVariantPrice.amount)
