@@ -22,7 +22,7 @@ export async function storefront(query: string, variables = {}) {
     }
 
     return responseData;
-  } catch (error: unknown) {
+  } catch (error) {
     return error.message;
     //throw new Error(`Error in storefront function: ${error.message}`);
   }
